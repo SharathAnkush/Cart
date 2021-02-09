@@ -1,0 +1,54 @@
+.Buypage{}
+
+h4{
+    margin-block-start: 0em;
+    margin-block-end: 0em;
+}
+
+.App{
+    display: flex;
+   
+    justify-content: center;
+  overflow: hidden;
+  background-color: rgb(219, 224, 224);
+}
+
+.divbuy{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.prodiv{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+    
+     flex-wrap: wrap;
+   
+    
+
+  
+}
+
+.singal{
+    margin: 0.5rem;
+    /* border: 2px solid rgb(4, 48, 168) ; */
+    padding: 1rem;
+}
+
+.cartpage{
+   
+    min-width: 30rem;
+    background-color: rgb(161, 161, 161);
+    margin: 0.5rem;
+    border: 2px solid rgb(4, 48, 168) ;
+    padding: 1rem
+}
+
+.sigcart{
+    margin: 0.5rem;
+    border: 2px solid rgb(0, 0, 0) ;
+    padding: 1rem
+    
+}
