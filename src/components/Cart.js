@@ -6,7 +6,7 @@ function Cart({CartItem,Buy,remove}) {
     let price = 0;
     
     CartItem.map(item => {
-        price = parseFloat(price) +  (item.proprice)
+    price = parseFloat(price) +  (item.proprice)
     }) 
 
     return (
@@ -16,9 +16,11 @@ function Cart({CartItem,Buy,remove}) {
             {CartItem.map((item) => (
                 <div key={item.id} className="sigcart">
                  <img src={item.tinyImg} />
-                 <h4>name : {item.proname}</h4>
-                <h4>price : {item.proprice}</h4>
-                <button onClick={() => remove(item)}>Remove</button>
+                  <div className="np">
+                    <h4>name : {item.proname}</h4>
+                    <h4>price : {item.proprice}</h4>
+                    <button onClick={() => remove(item)}>Remove</button>
+                  </div>
                 </div>
             ))}
             {CartItem.length >= 1 ? 

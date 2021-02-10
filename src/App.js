@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import BuyPage from './components/BuyPage'
 import Cart from './components/Cart'
 import '../src/style.css'
+import HeaderNav from '../src/Header/HeaderNav'
 
 function App() {
   const [ cart, setCart ] = useState([])
@@ -34,12 +35,13 @@ const Remove = (item) =>{
 
 
   return (
-    <div className="App">
-      <div className="divbuy">
-      <BuyPage addInCart={addInCart} className="Buypage"/>
+    <div className="Appx">
+      <HeaderNav/>
+     <div className="divbuy">
+       
 
-      </div>
-      
+      <BuyPage addInCart={addInCart} className="Buypage"/>
+     </div>
       <Cart CartItem={cart} Buy={Buy} remove={Remove} className="cartpage"/>
     </div>
   );
