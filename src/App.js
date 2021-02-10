@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import BuyPage from './components/BuyPage'
 import Cart from './components/Cart'
 import '../src/style.css'
@@ -35,8 +36,15 @@ const Remove = (item) =>{
 
 
   return (
-    <div className="Appx">
+   <div className="Appx">
+      <BrowserRouter>
       <HeaderNav/>
+      <Switch>
+        <Route exact path="/cart" component={cart}/>
+      </Switch>
+      
+      </BrowserRouter>
+      
      <div className="divbuy">
        
 
