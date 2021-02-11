@@ -4,10 +4,13 @@ import BuyPage from './components/BuyPage'
 import Cart from './components/Cart'
 import '../src/style.css'
 import HeaderNav from '../src/Header/HeaderNav'
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {Container,Col,Row} from 'reactstrap'
+
 
 function App() {
-  const [ cart, setCart ] = useState([])
-  console.log(cart)
+  const [ cart, setCart ] = useState([]);
  
  //methods
  //checking the buyitem is already in cart or not
@@ -16,7 +19,7 @@ const addInCart = (item) => {
   const alreadyInCart = cart.findIndex(array => array.id === item.id)
   
   if(alreadyInCart !== - 1){
-     alert('already in cart')
+     toast('already in cart',{type : 'error'})
      return;
   }
 
@@ -26,7 +29,7 @@ const addInCart = (item) => {
 //Buy method
 const Buy = () => {
  setCart([]);
- alert('added in cart')
+ toast('Purchase Complete',{type : 'success'})
 }
 
 //remove from cart
@@ -36,22 +39,20 @@ const Remove = (item) =>{
 
 
   return (
-   <div className="Appx">
-      <BrowserRouter>
-      <HeaderNav/>
-      <Switch>
-        <Route exact path="/cart" component={cart}/>
-      </Switch>
-      
-      </BrowserRouter>
-      
-     <div className="divbuy">
-       
-
-      <BuyPage addInCart={addInCart} className="Buypage"/>
-     </div>
-      <Cart CartItem={cart} Buy={Buy} remove={Remove} className="cartpage"/>
-    </div>
+    <>
+    
+    <Container fluid>
+      <ToastContainer/>
+      <Row >
+        <Col md='8'>
+        <BuyPage addInCart={addInCart} className="Buypage"/>
+        </Col>
+        <Col md='4'>
+        <Cart CartItem={cart} Buy={Buy} remove={Remove} className="cartpage"/>
+        </Col>
+      </Row>
+    </Container>
+    </>
   );
 }
 

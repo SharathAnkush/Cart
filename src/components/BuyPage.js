@@ -1,7 +1,8 @@
 import axios from 'axios';
 import {useState,useEffect} from 'react'
 import {random, commerce} from 'faker'
-import '../style.css'
+import {Container,Col,Row } from 'reactstrap'
+import CartItem from './CartItem'
 
 const URL = 'https://jsonware.com/json/7f26bf2c0233a09ad8426b4e6ad9ccbd.json';
 
@@ -29,20 +30,25 @@ const BuyPage = ({addInCart}) => {
  }, [])
       
     return(
-    <div className="prodiv">
-     {
-      products.map(( product ) => { 
-       return (
-         <div className='singal' key={product.id}>
-            <img src={product.tinyImg} style={{margin:'1rem', border:'2px solid black'}}/>
-            <h4>Name : {product.proname}</h4>
-            <h4>price : {product.proprice}</h4>
-            <button onClick={() => {addInCart(product)}} className="select">Select</button>
-         </div>             
-       );
-      })
-     }
-     </div>
+         <Container fluid>
+             <Row>
+               {products.map(( product ) =>(
+                   <Col md={4} key={product.id}>
+                     <CartItem product={product} addInCart={addInCart}/>
+                   </Col>
+                     
+                   )
+               )}
+            </Row>
+           </Container>
+
+        //  <div className='singal' key={product.id}>
+        //     <img src={product.tinyImg} style={{margin:'1rem', border:'2px solid black'}}/>
+        //     <h4>Name : {product.proname}</h4>
+        //     <h4>price : {product.proprice}</h4>
+        //     <button onClick={() => {addInCart(product)}} className="select">Select</button>
+        //  </div>             
+      
     );
 }
 
