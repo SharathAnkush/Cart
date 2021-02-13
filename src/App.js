@@ -1,8 +1,6 @@
 import React,{useState} from 'react'
-import {BrowserRouter,Switch,Route} from 'react-router-dom';
 import BuyPage from './components/BuyPage'
 import Cart from './components/Cart'
-import '../src/style.css'
 import HeaderNav from '../src/Header/HeaderNav'
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

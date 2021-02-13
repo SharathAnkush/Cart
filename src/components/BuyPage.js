@@ -40,14 +40,7 @@ const BuyPage = ({addInCart}) => {
                    )
                )}
             </Row>
-           </Container>
-
-        //  <div className='singal' key={product.id}>
-        //     <img src={product.tinyImg} style={{margin:'1rem', border:'2px solid black'}}/>
-        //     <h4>Name : {product.proname}</h4>
-        //     <h4>price : {product.proprice}</h4>
-        //     <button onClick={() => {addInCart(product)}} className="select">Select</button>
-        //  </div>             
+           </Container>           
       
     );
 }
